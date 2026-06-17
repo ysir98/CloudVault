@@ -1,0 +1,23 @@
+{
+  "name": "cloudvault",
+  "version": "1.0.0",
+  "private": true,
+  "description": "多云对象存储统一管理客户端",
+  "scripts": {
+    "dev": "concurrently --names \"server,client\" --prefix-colors \"cyan,green\" \"pnpm --filter server dev\" \"wait-on http://127.0.0.1:3721/api/health && pnpm --filter client dev\"",
+    "build": "pnpm --filter server build && pnpm --filter client build",
+    "test": "pnpm -r test",
+    "test:coverage": "pnpm -r test:coverage",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "wait-on": "^7.2.0",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.6"
+}

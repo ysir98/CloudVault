@@ -1,0 +1,47 @@
+/* ===============================================================
+   CloudVault 全局基础样式
+   =============================================================== */
+
+/* 字体（vfonts）和 highlight.js 主题已在 main.ts 通过 ES import 引入，
+   Vite 的模块解析器能正确定位 node_modules，PostCSS @import 不支持裸模块路径 */
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  height: 100%;
+}
+
+/* ---- 滚动条美化 ---- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(128, 128, 128, 0.5); }
+
+/* ---- 选中文本颜色 ---- */
+::selection { background: rgba(24, 160, 88, 0.25); }
+
+/* ---- 代码字体 ---- */
+code, pre, textarea.text-preview__editor {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+}
+
+/* ---- 无障碍：焦点轮廓 ---- */
+:focus-visible { outline: 2px solid #18a058; outline-offset: 2px; }
+
+/* ---- 过渡动画（全局） ---- */
+.v-enter-active, .v-leave-active { transition: opacity 0.2s ease; }
+.v-enter-from, .v-leave-to { opacity: 0; }
